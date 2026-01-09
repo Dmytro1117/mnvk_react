@@ -1,21 +1,14 @@
 import { useSelector } from 'react-redux';
-import {
-  Nav,
-  Link,
-  RegIcon,
-  LogInIcon,
-  HomeIcon,
-  Container,
-  Header,
-  Logo,
-  SearchLogo,
-} from './AppBar.styled';
 import Logotip from '../../../public/favicon.png';
 import { Loader } from '../Loader/Loader';
 import { UserMenu } from '../../components/UserMenu/UserMenu';
+import { selectIsLoggedIn, selectIsLoading } from '../../redux/auth/authSelectors';
+import { Nav, Link, RegIcon, LogInIcon, HomeIcon, Container, Header, Logo, SearchLogo } from './AppBar.styled';
 
 export const AppBar = () => {
-  const { isLoaggedIn, isLoading } = useSelector(state => state.auth);
+  const isLoaggedIn = useSelector(selectIsLoggedIn);
+  const isLoading = useSelector(selectIsLoading);
+
   return (
     <Header>
       {isLoading && <Loader />}

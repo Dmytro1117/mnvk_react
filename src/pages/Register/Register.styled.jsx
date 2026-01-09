@@ -1,21 +1,6 @@
 import styled from 'styled-components';
 import { Button } from 'antd';
 
-export const Container = styled.div`
-  width: 600px;
-  padding: 20px;
-  box-shadow: 4px 4px 8px #8888888e;
-  margin: auto;
-  margin-top: calc(
-    50vh - 60px
-  ); /* Пів висоти екрану мінус висота шапки (60px) */
-  transform: translateY(-50%);
-  border-radius: 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 export const Input = styled.input`
   width: 400px;
   margin-bottom: 22px;
@@ -43,10 +28,25 @@ export const But = styled(Button)`
   margin-right: auto;
 `;
 
+export const Container = styled.div`
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+  margin: 0 auto;
+
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const Title = styled.h2`
-  font-size: 28px;
-  color: #1374ce;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 18px;
-  margin-top: 18px;
+  font-size: 24px;
+  font-weight: 700;
+  color: color: #1374ce;
+  margin-bottom: 32px;
+  letter-spacing: -0.5px;
 `;

@@ -1,4 +1,4 @@
-import { register } from '../../redux/Authorization/operations';
+import { register } from '../../redux/auth/operationsAuth';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Input, Container, But, Title } from './Register.styled';
@@ -38,29 +38,11 @@ const Register = () => {
 
   return (
     <Container>
-      <Title>Зареєструвати нового користувача</Title>
+      <Title>Реєстрація</Title>
       <form onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          name="name"
-          value={name}
-          placeholder="Name"
-          onChange={handleChange}
-        />
-        <Input
-          type="email"
-          name="email"
-          value={email}
-          placeholder="Email"
-          onChange={handleChange}
-        />
-        <Input
-          type="password"
-          name="password"
-          value={password}
-          placeholder="Password"
-          onChange={handleChange}
-        />
+        <Input type="text" name="name" value={name} placeholder="Name" onChange={handleChange} />
+        <Input type="email" name="email" value={email} placeholder="Email" onChange={handleChange} />
+        <Input type="password" name="password" value={password} placeholder="Password" onChange={handleChange} />
         <But type="primary" htmlType="submit">
           Зареєструватись
         </But>

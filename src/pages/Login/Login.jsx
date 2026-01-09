@@ -1,12 +1,8 @@
 import { useState } from 'react';
-import { loginization } from '../../redux/Authorization/operations';
+import { Link } from 'react-router-dom';
+import { loginization } from '../../redux/auth/operationsAuth';
 import { useDispatch } from 'react-redux';
-import {
-  Input,
-  Container,
-  But,
-  Title,
-} from '../../pages/Register/Register.styled';
+import { Input, Container, But, Title } from '../../pages/Register/Register.styled';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -39,24 +35,18 @@ const Login = () => {
     <Container>
       <Title>Увійти</Title>
       <form onSubmit={handleSubmit}>
-        <Input
-          type="email"
-          name="email"
-          value={email}
-          placeholder="Email"
-          onChange={handleChange}
-        />
-        <Input
-          type="password"
-          name="password"
-          value={password}
-          placeholder="Password"
-          onChange={handleChange}
-        />
+        <Input type="email" name="email" value={email} placeholder="Email" onChange={handleChange} />
+        <Input type="password" name="password" value={password} placeholder="Password" onChange={handleChange} />
         <But type="primary" htmlType="submit">
           Увійти
         </But>
       </form>
+      <div style={{ marginTop: '15px', textAlign: 'center' }}>
+        <p>
+          Не отримали лист підтвердження?
+          <Link to="/resend-email">Надіслати знову</Link>
+        </p>
+      </div>
     </Container>
   );
 };
