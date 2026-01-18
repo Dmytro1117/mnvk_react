@@ -1,110 +1,107 @@
 import styled from 'styled-components';
-import { Tag } from 'antd';
 
 export const WrapperUser = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 6px 20px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 8px;
-  border: 1px solid rgba(58, 151, 232, 0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 5px 5px 5px 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  gap: 12px;
   transition: all 0.3s ease;
 
   &:hover {
     background: #ffffff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   }
 `;
 
 export const UserInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
+  text-align: right;
 
   .name {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: #1e293b;
     line-height: 1.1;
   }
+
+  .email {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    color: #64748b;
+  }
 `;
 
-export const StatusRow = styled.div`
+export const NameRow = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 2px;
-`;
+  justify-content: flex-end;
+  gap: 6px;
 
-export const StyledTag = styled(Tag)`
-  margin: 0 !important;
-  font-size: 9px;
-  font-weight: 800;
-  text-transform: uppercase;
-  border-radius: 4px;
-  border: none;
-  background: ${props => (props.color === 'blue' ? '#e0f2fe' : '#f1f5f9')};
-  color: ${props => (props.color === 'blue' ? '#0369a1' : '#475569')};
+  .admin-link {
+    color: #3a97e8;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.2) rotate(15deg);
+    }
+  }
 `;
 
 export const AvatarWrapper = styled.div`
   position: relative;
+  width: 42px;
+  height: 42px;
   cursor: pointer;
+  transition: transform 0.2s ease;
 
-  .camera-badge {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: #3a97e8;
-    border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #fff;
-    color: white;
-    font-size: 11px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .ant-avatar {
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    font-size: 24px;
-    background: #f1f5f9;
-  }
-
-  &:hover .ant-avatar {
-    border-color: #3a97e8;
+  &:hover {
     transform: scale(1.05);
+  }
+
+  .badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background: #3a97e8;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 `;
 
-export const ButtonLogout = styled.button`
+export const LogoutBtn = styled.button`
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: none;
+  background: #fee2e2;
+  color: #ef4444;
   display: flex;
   align-items: center;
-  gap: 4px;
-  background: transparent;
-  border: none;
-  color: #64748b;
-  padding: 0;
+  justify-content: center;
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  opacity: 0.7;
+  transition: all 0.3s ease;
 
   &:hover {
-    opacity: 1;
-    color: #e11d48;
-  }
-
-  svg {
-    font-size: 14px;
+    background: #ef4444;
+    color: white;
+    transform: rotate(15deg);
   }
 `;

@@ -1,77 +1,103 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import {
-  UserAddOutlined,
-  LoginOutlined,
-  HomeOutlined,
-  TeamOutlined,
-} from '@ant-design/icons';
+
+export const Header = styled.header`
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1300px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(15px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  padding: 8px 20px;
+`;
 
 export const Nav = styled.nav`
   display: flex;
-  justify-content: space-between;
-  height: 56px;
   align-items: center;
+  justify-content: space-between;
+  height: 60px;
 `;
 
-export const Link = styled(NavLink)`
-  &:first-child {
-    margin-left: 60px;
-    margin-right: 16px;
+export const NavGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+
+  background: transparent;
+  color: #64748b;
+  border: 1px solid transparent;
+
+  svg {
+    font-size: 18px;
+    color: #94a3b8;
+    transition: color 0.2s ease;
   }
 
-  &:not(:first-child) {
-    margin-left: 20px;
+  &:hover {
+    color: #1e293b;
+    background: #f8fafc;
+
+    svg {
+      color: #64748b;
+    }
   }
 
   &.active {
-    color: #3a97e8;
-    // border-top: 4px solid #3a97e8;
+    background: transparent;
+    color: #1e293b;
+    font-weight: 600;
+    border: 1px solid #3a97e8;
+
+    svg {
+      color: #3a97e8;
+    }
   }
-  text-decoration: none;
-  color: inherit;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 12px 4px;
 `;
 
-export const RegIcon = styled(UserAddOutlined)`
-  margin-right: 8px;
-  display: inline-flex;
+export const AccentLink = styled(StyledNavLink)`
+  border: 1px solid #e2e8f0;
+
+  &.active {
+    border: 1px solid #3a97e8;
+  }
 `;
 
-export const LogInIcon = styled(LoginOutlined)`
-  margin-right: 8px;
-  display: inline-flex;
+export const NavButtonsGroup = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
 `;
 
-export const HomeIcon = styled(HomeOutlined)`
-  margin-right: 8px;
-  display: inline-flex;
-`;
-
-// export const ContactIcon = styled(TeamOutlined)`
-//   margin-right: 8px;
-//   display: inline-flex;
-// `;
-
-export const Header = styled.header`
-  text-align: center;
-  border-bottom: 2px solid #3a97e8;
-  width: calc(100vw - 4px);
-`;
-
-export const Container = styled.div`
-  padding: 0 15px;
-  width: 1280px;
-  display: inline-block;
-`;
-
-export const SearchLogo = styled.img`
-  width: 34px;
-`;
-
-export const Logo = styled(NavLink)`
-  // margin: auto 8px;
-  position: absolute;
+export const LogoWrapper = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  img {
+    height: 40px;
+    width: auto;
+  }
 `;

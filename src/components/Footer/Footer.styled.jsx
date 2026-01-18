@@ -1,72 +1,94 @@
 import styled from 'styled-components';
 
 export const Footerr = styled.footer`
-  border-top: 2px solid #3a97e8;
-  background-color: #2f303a;
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
+  background-color: #1a1b22;
+  border-top: 1px solid rgba(58, 151, 232, 0.3);
+  color: #e5e7eb;
+  padding: 40px 0 20px;
   width: 100%;
   margin-top: auto;
-   padding-top: 8px;
-  padding-bottom: 8px;
-}
-`;
-
-export const Tex = styled.p`
-  padding: 10px;
-  font-size: 14px;
-  margin: 0;
-  color: #ffffff;
-  text-align: center;
 `;
 
 export const Container = styled.div`
-  padding: 0 15px;
-  width: 1280px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
+  gap: 30px;
 `;
 
-export const FooterAdress = styled.a`
-  line-height: 1.71;
-  color: #ffffff;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  // display: block;
-  font-style: normal;
-  text-decoration: none;
-  margin-bottom: 0px;
+export const MainContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
 
-  &:hover,
-  &:focus {
-    color: #2196f3;
-    cursor: pointer;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 `;
 
 export const Adress = styled.address`
-  // margin-right: 70px;
-  // max-width: 250px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+  font-style: normal;
 `;
 
-export const Soclist = styled.ul`
+export const FooterAdress = styled.a`
   display: flex;
-  width: 80px;
-  justify-content: space-between;
-`;
+  align-items: center;
+  gap: 10px;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
 
-export const SocItem = styled.li`
-  &:hover,
-  &:focus {
-    color: green;
-    outline: none;
-    transition: color 250ms linear;
+  &:hover {
+    color: #3a97e8;
+    transform: translateX(5px);
   }
 `;
 
-export const Svg = styled.svg`
-  fill: currentColor;
+export const CopyrightRow = styled.div`
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Tex = styled.p`
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+`;
+
+export const FooterInfo = styled.div`
+  max-width: 300px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+`;
+
+export const FooterLogo = styled.h3`
+  color: #3a97e8;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+`;
+
+export const FooterText = styled.p`
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.6;
+  margin: 0;
 `;

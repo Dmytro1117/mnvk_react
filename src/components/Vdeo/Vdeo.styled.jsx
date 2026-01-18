@@ -19,6 +19,9 @@ export const VideoTitle = styled.h2`
 `;
 
 export const VideoFile = styled.video`
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
   margin-top: auto;

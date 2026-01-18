@@ -12,7 +12,6 @@ export const Img = styled.img`
   overflow: hidden;
   border-radius: 10px;
   width: 500px;
-  // height: auto;
   height: 300px;
   margin-top: auto;
   margin-bottom: auto;
@@ -36,7 +35,9 @@ export const Text = styled.p`
   width: 700px;
   margin-bottom: 20px;
   font-size: 18px;
-  line-height: 1.22;
+  line-height: 1.8;
+  color: #64748b;
+  font-weight: 400;
   text-align: justify;
   text-indent: 30px;
   line-height: 1.3;

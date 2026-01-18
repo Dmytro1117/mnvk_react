@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { AddButton } from '../../components/Buttons/AddButton/AddButton';
 import { resendVerification } from '../../redux/auth/operationsAuth';
-import { Container, Title, Input, But } from '../Register/Register.styled';
+import { Container, Title, Input, ButWrapper, HelperText } from '../../components/common/Form.styled';
 
 const ResendEmail = () => {
   const [email, setEmail] = useState('');
@@ -9,7 +11,11 @@ const ResendEmail = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!email) return;
+
+    if (!email.trim()) {
+      Notify.warning('Будь ласка, введіть адресу електронної пошти');
+      return;
+    }
 
     dispatch(resendVerification(email));
     console.log(email);
@@ -19,10 +25,8 @@ const ResendEmail = () => {
   return (
     <Container>
       <Title>Повторно відправити листа</Title>
-      <p style={{ marginBottom: '30px', textAlign: 'center', color: '#666' }}>
-        Якщо ви не отримали лист для верифікації, введіть вашу пошту нижче.
-      </p>
-      <form onSubmit={handleSubmit}>
+      <HelperText>Якщо ви не отримали лист для верифікації, введіть вашу пошту нижче.</HelperText>
+      <form onSubmit={handleSubmit} noValidate>
         <Input
           type="email"
           name="email"
@@ -31,7 +35,9 @@ const ResendEmail = () => {
           onChange={e => setEmail(e.target.value)}
           required
         />
-        <But htmlType="submit">Надіслати лист</But>
+        <ButWrapper>
+          <AddButton type="primary">Надіслати лист</AddButton>
+        </ButWrapper>
       </form>
     </Container>
   );

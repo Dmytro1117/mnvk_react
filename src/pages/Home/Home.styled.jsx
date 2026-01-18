@@ -1,78 +1,86 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import hero from '../../../public/hero.jpg';
+import styled, { keyframes } from 'styled-components';
+import hero from '../../images/hero.jpeg';
 
-export const Tex = styled.p`
-  text-align: center;
-  padding: 10px;
-  width: 1000px;
-  margin: 0 auto;
-  color: white;
-  margin-top: 120px;
-  margin-bottom: 120px;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 1.36;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+const fadeInUp = keyframes`
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 `;
 
-export const Img = styled.img`
-  width: 1200px;
-  object-fit: contain;
-  object-position: center;
+export const Hero = styled.section`
+  position: relative;
+  width: 100%;
+
+  height: 70vh;
+
   display: flex;
-  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: -120px;
+  padding-top: 110px;
+
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(255, 255, 255, 1) 100%), url(${hero});
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: 768px) {
+    height: 55vh;
+    margin-top: -100px;
+    padding-top: 100px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+`;
+
+export const HeroContent = styled.div`
+  position: relative;
+  z-index: 2; /* Поверх вуалі */
+  max-width: 900px;
+  padding: 40px 20px;
+  text-align: center;
+  animation: ${fadeInUp} 1.2s ease-out;
+
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  margin: 0 20px;
+`;
+
+export const Tex = styled.h1`
+  margin: 0;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: clamp(28px, 6vw, 56px);
+  line-height: 1.1;
+
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+  span {
+    display: block;
+    font-size: clamp(12px, 1.8vw, 16px);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: #4db3ff;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
 `;
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  min-height: calc(100vh - 140px);
-`;
-
-export const UnderTitle = styled.h2`
-  margin-top: 35px;
-  // color: #2e2d2dbc;
-  text-align: center;
-  font-size: 28px;
-  height: 40px;
-  margin-bottom: 40px;
-`;
-
-export const HomeLink = styled(Link)`
-  text-decoration: none;
-  margin: 0 6px;
-  color: white;
-  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  border: 1px solid #1677ff;
-  border-radius: 4px;
-  box-shadow: 0 2px 0 rgb(5 145 255 / 10%);
-  padding: 4px 12px;
-  background-color: #1677ff;
-  font-weight: 400;
-  font-size: 18px;
-
-  &:hover,
-  &:focus {
-    opacity: 0.8;
-    background-color: white;
-    color: #1677ff;
-  }
-`;
-
-export const Hero = styled.div`
-  width: calc(100vw - 4px);
-
-  background-size: contain;
-
-  background-image: linear-gradient(
-      rgba(25, 26, 29, 0.7),
-      rgba(47, 48, 58, 0.7)
-    ),
-    url(${hero});
-
-  background-position: center;
+  width: 100%;
 `;

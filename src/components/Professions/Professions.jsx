@@ -1,19 +1,5 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { motion, useAnimation } from 'framer-motion';
-import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
-import driver from '../../images/Professions/driver.png';
-import web from '../../images/Professions/web.png';
-import locksmith from '../../images/Professions/locksmith.png';
-import psychologist from '../../images/Professions/psychologist.png';
-import secretary from '../../images/Professions/secretary.png';
-import cook from '../../images/Professions/cook.png';
-import driverIco from '../../images/Professions/водій.png';
-import webIco from '../../images/Professions/дизайнер.png';
-import locksmithIco from '../../images/Professions/слюсар.png';
-import psychologistIco from '../../images/Professions/психолог.png';
-import secretaryIco from '../../images/Professions/секретар.png';
-import cookIco from '../../images/Professions/кухар.png';
 import {
   Section,
   Wrapper,
@@ -22,24 +8,22 @@ import {
   Title,
   CanvasContainer,
   WrappContainer,
-  Cont,
+  WrappContainer2,
   Image,
   TextContainer,
   ProgTitle,
-  Cont2,
-  WrappContainer2,
   Overlay,
   Overlay2,
+  ProfessionImgWrapper,
   ProfessionList,
   ProfessionItem,
-  ProfessionImg,
   ProfessionText,
-  NavLin,
+  Cont,
+  Cont2,
 } from './Professions.styled';
 
 const Professions = () => {
   const controls = useAnimation();
-  const isLoaggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,76 +70,80 @@ const Professions = () => {
           <Text>
             Ми надаємо можливість опанувати сучасні технології, отримати актуальні знання та розвивати навички, які є
             важливими в сучасному ринку праці. Ви зможете не лише отримати необхідний досвід, але й розвинути свої
-            таланти та знайти власний шлях до успіху у вибраній галузі.
+            таланти та знайти власний шлях до успіху у вибраній галузі.закладами.
           </Text>
 
           <ProfessionList>
             <ProfessionItem>
-              <ProfessionImg src={driverIco} alt="Водій" />
-
-              {isLoaggedIn ? (
-                <NavLin to="/driver">
-                  <ProfessionText>Водій автотранспортних засобів (категорії «В», «С»)</ProfessionText>
-                </NavLin>
-              ) : (
-                <ProfessionText>Водій автотранспортних засобів (категорії «В», «С»)</ProfessionText>
-              )}
-            </ProfessionItem>
-            <ProfessionItem>
-              <ProfessionImg src={locksmithIco} alt="Слюсар" />
-
-              {isLoaggedIn ? (
-                <NavLin to="/locksmith">
-                  <ProfessionText>Слюсар механоскладальних робіт</ProfessionText>
-                </NavLin>
-              ) : (
-                <ProfessionText>Слюсар механоскладальних робіт</ProfessionText>
-              )}
+              <ProfessionImgWrapper>
+                <img
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477982/MMNVK/%D0%B2%D0%BE%D0%B4%D1%96%D0%B9_btrfgt.png'
+                  }
+                  alt="Водій"
+                />
+              </ProfessionImgWrapper>
+              <ProfessionText>Водій автотранспортних засобів (кат. «В», «С»)</ProfessionText>
             </ProfessionItem>
 
             <ProfessionItem>
-              <ProfessionImg src={secretaryIco} alt="Секретар" />
-
-              {isLoaggedIn ? (
-                <NavLin to="/secretary">
-                  <ProfessionText>Секретар керівника (організації підприємства, установи)</ProfessionText>
-                </NavLin>
-              ) : (
-                <ProfessionText>Секретар керівника (організації підприємства, установи)</ProfessionText>
-              )}
+              <ProfessionImgWrapper>
+                <img
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477997/MMNVK/%D1%81%D0%BB%D1%8E%D1%81%D0%B0%D1%80_vcljvz.png'
+                  }
+                  alt="Слюсар"
+                />
+              </ProfessionImgWrapper>
+              <ProfessionText>Слюсар механоскладальних робіт</ProfessionText>
             </ProfessionItem>
-            <ProfessionItem>
-              <ProfessionImg src={webIco} alt="Дизайн" />
 
-              {isLoaggedIn ? (
-                <NavLin to="/web">
-                  <ProfessionText>Основи web-дизайну та web-програмування</ProfessionText>
-                </NavLin>
-              ) : (
-                <ProfessionText>Основи web-дизайну та web-програмування</ProfessionText>
-              )}
+            <ProfessionItem>
+              <ProfessionImgWrapper>
+                <img
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477994/MMNVK/%D1%81%D0%B5%D0%BA%D1%80%D0%B5%D1%82%D0%B0%D1%80_x86gjh.png'
+                  }
+                  alt="Секретар"
+                />
+              </ProfessionImgWrapper>
+              <ProfessionText>Секретар керівника організації</ProfessionText>
             </ProfessionItem>
-            <ProfessionItem>
-              <ProfessionImg src={cookIco} alt="Кухар" />
 
-              {isLoaggedIn ? (
-                <NavLin to="/cook">
-                  <ProfessionText>Кухар</ProfessionText>
-                </NavLin>
-              ) : (
-                <ProfessionText>Кухар</ProfessionText>
-              )}
+            <ProfessionItem>
+              <ProfessionImgWrapper>
+                <img
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477983/MMNVK/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5%D1%80_ucxplo.png'
+                  }
+                  alt="Дизайн"
+                />
+              </ProfessionImgWrapper>
+              <ProfessionText>Основи Web-дизайну та програмування</ProfessionText>
             </ProfessionItem>
-            <ProfessionItem>
-              <ProfessionImg src={psychologistIco} alt="Психолог" />
 
-              {isLoaggedIn ? (
-                <NavLin to="/psychologist">
-                  <ProfessionText>Основи психологічних знань - система особистісного росту</ProfessionText>
-                </NavLin>
-              ) : (
-                <ProfessionText>Основи психологічних знань - система особистісного росту</ProfessionText>
-              )}
+            <ProfessionItem>
+              <ProfessionImgWrapper>
+                <img
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477989/MMNVK/%D0%BA%D1%83%D1%85%D0%B0%D1%80_cdykhx.png'
+                  }
+                  alt="Кухар"
+                />
+              </ProfessionImgWrapper>
+              <ProfessionText>Кухар 3-го розряду</ProfessionText>
+            </ProfessionItem>
+
+            <ProfessionItem>
+              <ProfessionImgWrapper>
+                <img
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477991/MMNVK/%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3_kii10v.png'
+                  }
+                  alt="Психолог"
+                />
+              </ProfessionImgWrapper>
+              <ProfessionText>Психологія та особистісний ріст</ProfessionText>
             </ProfessionItem>
           </ProfessionList>
         </InfoContainer>
@@ -164,7 +152,10 @@ const Professions = () => {
           <WrappContainer id="yourElementId">
             <motion.div initial="hidden" animate={controls} variants={variants} transition={{ duration: 1.2 }}>
               <Cont>
-                <Image src={driver} alt="Profession" />
+                <Image
+                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477972/MMNVK/driver_fgqkkz.png'}
+                  alt="Profession"
+                />
 
                 <TextContainer>
                   <ProgTitle>Водій</ProgTitle>
@@ -176,7 +167,10 @@ const Professions = () => {
               </Cont>
 
               <Cont>
-                <Image src={locksmith} alt="Profession" />
+                <Image
+                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477972/MMNVK/locksmith_diajze.png'}
+                  alt="Profession"
+                />
 
                 <TextContainer>
                   <ProgTitle>Слюсар</ProgTitle>
@@ -187,7 +181,10 @@ const Professions = () => {
                 </Overlay>
               </Cont>
               <Cont>
-                <Image src={secretary} alt="Profession" />
+                <Image
+                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477978/MMNVK/secretary_cfmiob.png'}
+                  alt="Profession"
+                />
 
                 <TextContainer>
                   <ProgTitle>Секретар</ProgTitle>
@@ -203,7 +200,10 @@ const Professions = () => {
           <WrappContainer2>
             <motion.div initial="hidden2" animate={controls} variants={variants} transition={{ duration: 1.2 }}>
               <Cont2>
-                <Image src={web} alt="Profession" />
+                <Image
+                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477982/MMNVK/web_ls8wio.png'}
+                  alt="Profession"
+                />
 
                 <TextContainer>
                   <ProgTitle>Web-дизайнер</ProgTitle>
@@ -215,7 +215,10 @@ const Professions = () => {
               </Cont2>
 
               <Cont2>
-                <Image src={psychologist} alt="Profession" />
+                <Image
+                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477977/MMNVK/psychologist_xq7sge.png'}
+                  alt="Profession"
+                />
 
                 <TextContainer>
                   <ProgTitle>Психолог</ProgTitle>
@@ -226,7 +229,10 @@ const Professions = () => {
                 </Overlay2>
               </Cont2>
               <Cont2>
-                <Image src={cook} alt="Profession" />
+                <Image
+                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477971/MMNVK/cook_v36oqe.png'}
+                  alt="Profession"
+                />
 
                 <TextContainer>
                   <ProgTitle>Кухар</ProgTitle>

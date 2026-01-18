@@ -1,8 +1,8 @@
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 import { AppBar } from '../../components/AppBar/AppBar';
-import { Suspense } from 'react'; // для лінивої загрузки
 import Footer from '../../components/Footer/Footer';
 import { Container, Content } from './Layout.styled';
-import { Outlet } from 'react-router-dom';
 
 export const Layout = () => {
   return (

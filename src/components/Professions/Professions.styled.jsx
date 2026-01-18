@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Section = styled.div`
   width: 1280px;
   padding: 32px 16px;
   margin: 0 auto;
-  // display: flex;
 `;
 
 export const Wrapper = styled.div`
@@ -13,15 +11,19 @@ export const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const NavLin = styled(Link)`
-  text-decoration: none;
-`;
-
 export const InfoContainer = styled.div`
   width: 570px;
-  // margin-right: 50px;
-  // background-color: rgba(236, 229, 234, 0.8);
-  // border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Text = styled.p`
+  text-align: justify;
+  text-indent: 30px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 24px;
 `;
 
 export const Title = styled.h2`
@@ -34,41 +36,9 @@ export const Title = styled.h2`
   text-shadow: 2px 2px 4px #000000;
 `;
 
-export const Text = styled.p`
-  // font-size: 18px;
-  // line-height: 22px;
-  // text-align: justify;
-  font-size: 18px;
-  line-height: 1.22;
-  text-align: justify;
-  text-indent: 30px;
-  line-height: 1.3;
-  margin-bottom: 28px;
-  margin-top: 28px;
-`;
-
-export const Name = styled.h3`
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 26px;
-  letter-spacing: 0.06em;
-`;
-
-export const Item = styled.p`
-  display: flex;
-  align-items: center;
-
-  &:not(:last-child) {
-    margin-bottom: 16px;
-  }
-`;
-
 export const CanvasContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  // padding-top: 20px;
   width: 620px;
   height: 1000px;
 `;
@@ -97,16 +67,9 @@ export const TextContainer = styled.div`
   top: 0;
   left: 0;
 
-  background: linear-gradient(
-      0.1deg,
-      rgba(0, 0, 0, 0.8) 0%,
-      rgba(156, 156, 156, 0) 90%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 239, 246, 0.2) 100%,
-      rgba(255, 239, 246, 0.3) 100%
-    );
+  background:
+    linear-gradient(0.1deg, rgba(0, 0, 0, 0.8) 0%, rgba(156, 156, 156, 0) 90%),
+    linear-gradient(180deg, rgba(255, 239, 246, 0.2) 100%, rgba(255, 239, 246, 0.3) 100%);
   border: 2px solid skyblue;
   border-radius: 50%;
   text-align: center;
@@ -199,24 +162,66 @@ export const Cont2 = styled.div`
   }
 `;
 
-export const ProfessionList = styled.ul``;
+export const ProfessionList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+`;
 
 export const ProfessionItem = styled.li`
   display: flex;
-  // text-align: center;
-  justify-content: space-evenly;
   align-items: center;
-  margin-top: 28px;
+  gap: 10px;
+  padding: 6px 8px;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    border-color: #3a97e8;
+    background: rgba(58, 151, 232, 0.02);
+    transform: translateX(6px);
+  }
+`;
+
+export const ProfessionImgWrapper = styled.div`
+  min-width: 52px;
+  height: 52px;
+  background: #f8fafc;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+
+  ${ProfessionItem}:hover & {
+    background: rgba(58, 151, 232, 0.12);
+    border-color: rgba(58, 151, 232, 0.3);
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: grayscale(10%) contrast(1.1);
+  }
 `;
 
 export const ProfessionText = styled.p`
-  font-weight: 500;
-  line-height: 1.22;
-  font-size: 22px;
-  letter-spacing: 0.04em;
-  width: 450px;
-`;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #475569;
+  font-weight: 600;
+  margin: 0;
+  transition: all 0.3s ease;
 
-export const ProfessionImg = styled.img`
-  width: 50px;
+  ${ProfessionItem}:hover & {
+    color: #3a97e8;
+  }
 `;

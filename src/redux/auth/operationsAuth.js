@@ -6,16 +6,25 @@ import { setAuthHeader, cleanAuthHeader } from '../../helpers/axiosConfig';
 export const register = createAsyncThunk('auth/register', async (user, { rejectWithValue }) => {
   try {
     const response = await axios.post('/auth/register', user);
-    Notify.success('Registration successful! Please check your email to verify your account.');
+    Notify.success('Реєстрація успішна! Будь ласка, підтвердіть ваш email.');
     return response.data.user;
   } catch (error) {
-    if (error.response.status === 409 || error.response.status === 400) {
-      error.response?.data?.message.forEach(msg => {
-        Notify.failure(msg);
-      });
+    const serverMessage = error.response?.data?.message;
+   
+    if (error.response?.status === 409 || error.response?.status === 400) {
+      // Якщо прийшов масив (від Joi)
+      if (Array.isArray(serverMessage)) {
+        serverMessage.forEach(msg => Notify.failure(msg));
+      }
+      // Якщо прийшов рядок (від Conflict/409)
+      else if (typeof serverMessage === 'string') {
+        Notify.failure(serverMessage);
+      }
+    } else {
+      Notify.failure('Сталася помилка сервера. Спробуйте пізніше.');
     }
 
-    return rejectWithValue(error.message);
+    return rejectWithValue(error.response?.data?.message || error.message);
   }
 });
 
@@ -25,16 +34,20 @@ export const verificationUser = createAsyncThunk(
     try {
       const { data } = await axios.get(`/auth/verify/${verificationToken}`);
 
-      Notify.success('Пошта верифікована. Можете залогінитися. (Email verified successfully! You can now log in)');
+      Notify.success('Пошта підтверджена! Тепер ви можете увійти в систему.');
 
       return data;
     } catch (error) {
-      if (error.response?.status === 404) {
-        Notify.failure(
-          'Посилання недійсне чи вже використане. (Verification link is invalid or has already been used)',
-        );
-      }
+      const serverMessage = error.response?.data?.message;
 
+      if (error.response?.status === 404) {
+        Notify.failure('Посилання недійсне або вже було використане.');
+      } else if (typeof serverMessage === 'string') {
+        Notify.failure(serverMessage);
+      } else {
+        Notify.failure('Сталася помилка при верифікації.');
+      }
+   
       return rejectWithValue(error.message);
     }
   },
@@ -45,9 +58,17 @@ export const resendVerification = createAsyncThunk('auth/resendVerification', as
     const { data } = await axios.post('/auth/verify/resend-email', { email });
     Notify.success('Лист підтвердження надіслано повторно!');
     return data;
+
   } catch (error) {
-    const serverMessage = error.response?.data?.message || 'Помилка запиту';
-    Notify.failure(serverMessage);
+    const serverMessage = error.response?.data?.message;
+
+    if (Array.isArray(serverMessage)) {
+      serverMessage.forEach(msg => Notify.failure(msg));
+    } else if (typeof serverMessage === 'string') {
+      Notify.failure(serverMessage);
+    } else {
+      Notify.failure('Не вдалося надіслати лист. Спробуйте пізніше.');
+    }
     return rejectWithValue(serverMessage);
   }
 });
@@ -56,22 +77,30 @@ export const loginization = createAsyncThunk('auth/loginization', async (user, {
   try {
     const response = await axios.post('/auth/login', user);
     setAuthHeader(response.data.token);
+    Notify.success(`Вітаємо, ${response.data.user.name}!`);
     return response.data;
   } catch (error) {
-    if (error.response.status === 401) {
-      Notify.failure(`${error.response?.data?.message ?? 'Пошта не верифікована. (Email is not verified)'}!`);
+    const status = error.response?.status;
+    const serverMessage = error.response?.data?.message;
+
+    // 1. Обробка помилок валідації (Joi повертає масив)
+    if (status === 400 && Array.isArray(serverMessage)) {
+      serverMessage.forEach(msg => Notify.failure(msg));
+    }
+    // 2. Обробка 401, 403 та інших помилок (де message — це рядок)
+    else if (serverMessage && typeof serverMessage === 'string') {
+      Notify.failure(serverMessage);
+    }
+    // 3. Запасний варіант, якщо сервер не надіслав текст
+    else if (status === 401) {
+      Notify.failure('Пошта не верифікована або доступ заборонено');
+    } else if (!error.response) {
+      Notify.failure('Помилка мережі. Перевірте з’єднання з інтернетом.');
+    } else {
+      Notify.failure('Сталася непередбачена помилка');
     }
 
-    if (error.response.status === 403) {
-      Notify.failure(`${error.response?.data?.message}!`);
-    }
-
-    if (error.response.status === 400) {
-      error.response?.data?.message.forEach(msg => {
-        Notify.failure(msg);
-      });
-    }
-    return rejectWithValue(error.message);
+    return rejectWithValue(serverMessage || error.message);
   }
 });
 

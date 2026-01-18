@@ -1,18 +1,18 @@
-import { Triangle } from 'react-loader-spinner';
-import css from './Loader.module.css';
+import { RotatingLines } from 'react-loader-spinner';
+import { LoaderBackdrop } from './Loader.styled';
 
 export const Loader = () => {
   return (
-    <div className={css.div}>
-      <Triangle
+    <LoaderBackdrop>
+      <RotatingLines
         visible={true}
         height="80"
         width="80"
-        ariaLabel="blocks-loading"
-        wrapperStyle={{}}
-        wrapperClass="blocks-wrapper"
-        color="skyblue"
+        strokeColor="#3a97e8"
+        strokeWidth="5"
+        animationDuration="0.75"
+        ariaLabel="rotating-lines-loading"
       />
-    </div>
+    </LoaderBackdrop>
   );
 };

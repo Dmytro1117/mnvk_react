@@ -1,6 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, loginization, logOut, refreshUser, updateAvatar } from './operationsAuth';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import {
+  register,
+  loginization,
+  logOut,
+  refreshUser,
+  updateAvatar,
+  verificationUser, 
+  resendVerification,
+} from './operationsAuth';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -10,12 +17,6 @@ const handlePending = state => {
 const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
-
-  Notify.failure(
-    `${action.payload}` === 'Network Error'
-      ? `${action.payload}`
-      : 'Something went wrong. Check your data and try again',
-  );
 };
 
 const authSlise = createSlice({
@@ -45,6 +46,7 @@ const authSlise = createSlice({
         state.isLoading = false;
       })
       .addCase(loginization.rejected, handleRejected)
+
       .addCase(refreshUser.pending, state => {
         state.isRefreshing = true;
       })
@@ -56,6 +58,22 @@ const authSlise = createSlice({
       .addCase(refreshUser.rejected, (state, action) => {
         state.isRefreshing = false;
       })
+      
+      .addCase(verificationUser.pending, handlePending)
+      .addCase(verificationUser.fulfilled, state => {
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(verificationUser.rejected, handleRejected)
+
+    
+      .addCase(resendVerification.pending, handlePending)
+      .addCase(resendVerification.fulfilled, state => {
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(resendVerification.rejected, handleRejected)
+
       .addCase(updateAvatar.pending, handlePending)
       .addCase(updateAvatar.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -63,6 +81,7 @@ const authSlise = createSlice({
         state.user.avatar = action.payload;
       })
       .addCase(updateAvatar.rejected, handleRejected)
+      
       .addCase(logOut.pending, handlePending)
       .addCase(logOut.fulfilled, state => {
         state.user = { email: null, name: null };
