@@ -29,7 +29,7 @@ export const SlidesWindow = styled.div`
 export const SlideItem = styled.div`
   position: relative;
   flex: ${props => (props.$active ? '2.2' : '1')};
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   will-change: flex;

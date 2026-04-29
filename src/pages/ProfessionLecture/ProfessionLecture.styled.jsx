@@ -110,7 +110,6 @@ export const LectureContent = styled.div`
   padding: 20px;
   border-top: 1px solid #e2e8f0;
   background-color: #fff;
-  /* Додаємо легку анімацію появи */
   animation: slideDown 0.3s ease-out;
 
   @keyframes slideDown {

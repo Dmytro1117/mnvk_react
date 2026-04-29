@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import hero from '../../images/hero.jpeg';
+import hero from '../../images/hero.png';
 
 const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(30px); }
@@ -20,10 +20,10 @@ export const Hero = styled.section`
   padding-top: 110px;
 
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(255, 255, 255, 1) 100%), url(${hero});
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 70%, rgba(255, 255, 255, 1) 100%), url(${hero});
 
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
 
   @media (max-width: 768px) {
@@ -49,11 +49,10 @@ export const HeroContent = styled.div`
   max-width: 900px;
   padding: 40px 20px;
   text-align: center;
-  animation: ${fadeInUp} 1.2s ease-out;
+  animation: ${fadeInUp} 0.4s ease-out;
 
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(15px);
-  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   margin: 0 20px;

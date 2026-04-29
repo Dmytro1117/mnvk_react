@@ -5,7 +5,7 @@ export const WrapperUser = styled.div`
   align-items: center;
   background: rgba(255, 255, 255, 0.5);
   padding: 5px 5px 5px 15px;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.03);
   gap: 12px;
   transition: all 0.3s ease;
@@ -34,7 +34,7 @@ export const UserInfo = styled.div`
     margin: 0;
     font-size: 11px;
     font-weight: 500;
-    color: #64748b;
+    color: #1e293b;
   }
 `;
 

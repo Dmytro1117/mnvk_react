@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <Section>
       <Img
-        src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477862/MMNVK/aboutUS_dqeglw.jpg'}
+        src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777450590/MNVK/about/aboutUS_xto8fj.jpg'}
         alt="Mr.hero"
       />
 

@@ -45,7 +45,7 @@ export const NavButton = styled(Link)`
 
 export const Img = styled.img`
   width: 100%;
-  max-width: 600px;
+  max-width: 375px;
   height: auto;
   border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);

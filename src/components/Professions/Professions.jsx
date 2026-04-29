@@ -78,7 +78,7 @@ const Professions = () => {
               <ProfessionImgWrapper>
                 <img
                   src={
-                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477982/MMNVK/%D0%B2%D0%BE%D0%B4%D1%96%D0%B9_btrfgt.png'
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777449846/MNVK/logo/%D0%B2%D0%BE%D0%B4%D1%96%D0%B9_epyi5d.png'
                   }
                   alt="Водій"
                 />
@@ -90,7 +90,7 @@ const Professions = () => {
               <ProfessionImgWrapper>
                 <img
                   src={
-                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477997/MMNVK/%D1%81%D0%BB%D1%8E%D1%81%D0%B0%D1%80_vcljvz.png'
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777449852/MNVK/logo/%D1%81%D0%BB%D1%8E%D1%81%D0%B0%D1%80_c6fdbu.png'
                   }
                   alt="Слюсар"
                 />
@@ -102,7 +102,7 @@ const Professions = () => {
               <ProfessionImgWrapper>
                 <img
                   src={
-                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477994/MMNVK/%D1%81%D0%B5%D0%BA%D1%80%D0%B5%D1%82%D0%B0%D1%80_x86gjh.png'
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777449850/MNVK/logo/%D1%81%D0%B5%D0%BA%D1%80%D0%B5%D1%82%D0%B0%D1%80_woxue7.png'
                   }
                   alt="Секретар"
                 />
@@ -114,7 +114,7 @@ const Professions = () => {
               <ProfessionImgWrapper>
                 <img
                   src={
-                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477983/MMNVK/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5%D1%80_ucxplo.png'
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777449847/MNVK/logo/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5%D1%80_ncqxjq.png'
                   }
                   alt="Дизайн"
                 />
@@ -126,7 +126,7 @@ const Professions = () => {
               <ProfessionImgWrapper>
                 <img
                   src={
-                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477989/MMNVK/%D0%BA%D1%83%D1%85%D0%B0%D1%80_cdykhx.png'
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777449848/MNVK/logo/%D0%BA%D1%83%D1%85%D0%B0%D1%80_vbsoei.png'
                   }
                   alt="Кухар"
                 />
@@ -138,7 +138,7 @@ const Professions = () => {
               <ProfessionImgWrapper>
                 <img
                   src={
-                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477991/MMNVK/%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3_kii10v.png'
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777449849/MNVK/logo/%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3_a6ypam.png'
                   }
                   alt="Психолог"
                 />
@@ -153,7 +153,9 @@ const Professions = () => {
             <motion.div initial="hidden" animate={controls} variants={variants} transition={{ duration: 1.2 }}>
               <Cont>
                 <Image
-                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477972/MMNVK/driver_fgqkkz.png'}
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777452433/MNVK/professions/poster/driver_xf0w3x.png'
+                  }
                   alt="Profession"
                 />
 
@@ -168,7 +170,9 @@ const Professions = () => {
 
               <Cont>
                 <Image
-                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477972/MMNVK/locksmith_diajze.png'}
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777452435/MNVK/professions/poster/locksmith_x5pkdy.png'
+                  }
                   alt="Profession"
                 />
 
@@ -182,7 +186,9 @@ const Professions = () => {
               </Cont>
               <Cont>
                 <Image
-                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477978/MMNVK/secretary_cfmiob.png'}
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777452398/MNVK/professions/poster/ewu1ztl1cko93zpny05i_ndhs5q.png'
+                  }
                   alt="Profession"
                 />
 
@@ -201,7 +207,9 @@ const Professions = () => {
             <motion.div initial="hidden2" animate={controls} variants={variants} transition={{ duration: 1.2 }}>
               <Cont2>
                 <Image
-                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477982/MMNVK/web_ls8wio.png'}
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777452401/MNVK/professions/poster/slw4u2waub6ktog6ffyt_rcxxuk.png'
+                  }
                   alt="Profession"
                 />
 
@@ -216,7 +224,9 @@ const Professions = () => {
 
               <Cont2>
                 <Image
-                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477977/MMNVK/psychologist_xq7sge.png'}
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777452759/MNVK/professions/poster/%D0%91%D0%B5%D0%B7_%D1%96%D0%BC%D0%B5%D0%BD%D1%96_lgspz6.png'
+                  }
                   alt="Profession"
                 />
 
@@ -230,7 +240,9 @@ const Professions = () => {
               </Cont2>
               <Cont2>
                 <Image
-                  src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1768477971/MMNVK/cook_v36oqe.png'}
+                  src={
+                    'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777452432/MNVK/professions/poster/cook_t1majc.png'
+                  }
                   alt="Profession"
                 />
 

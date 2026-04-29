@@ -47,6 +47,7 @@ export const StatItem = styled.div`
   border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  text-align: center;
 
   &::before {
     content: '';

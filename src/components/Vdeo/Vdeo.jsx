@@ -1,9 +1,10 @@
-import poster from '../../images/hero.jpeg';
+import poster from '../../images/posterVideo.png';
 import { Container, Text } from '../../components/AboutUs/AboutUs.styled';
 import { Section, VideoTitle, VideoFile } from './Vdeo.styled';
 
 const Video = () => {
-  const video = 'https://res.cloudinary.com/dpvqbbgkd/video/upload/v1768165759/MMNVK/presentation_mmnvk_vext4d.mp4';
+  const video =
+    'https://res.cloudinary.com/dpvqbbgkd/video/upload/v1777450578/MNVK/about/presentation_mmnvk_o6nbgp.mp4';
 
   return (
     <Section>

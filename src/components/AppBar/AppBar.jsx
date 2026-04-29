@@ -24,7 +24,7 @@ export const AppBar = () => {
         <NavGroup>
           <LogoWrapper to="/">
             <img
-              src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1767947733/MMNVK/favicon_gdmzsk.png'}
+              src={'https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777449494/MNVK/logo/favicon_bf92ib.png'}
               alt="MMNVK Logo"
             />
           </LogoWrapper>

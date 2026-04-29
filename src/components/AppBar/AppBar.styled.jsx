@@ -9,12 +9,12 @@ export const Header = styled.header`
   width: 95%;
   max-width: 1300px;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(15px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   padding: 8px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 `;
 
 export const Nav = styled.nav`
@@ -43,12 +43,12 @@ export const StyledNavLink = styled(NavLink)`
   transition: all 0.2s ease-in-out;
 
   background: transparent;
-  color: #64748b;
+  color: white;
   border: 1px solid transparent;
 
   svg {
     font-size: 18px;
-    color: #94a3b8;
+    color: white;
     transition: color 0.2s ease;
   }
 
@@ -63,7 +63,7 @@ export const StyledNavLink = styled(NavLink)`
 
   &.active {
     background: transparent;
-    color: #1e293b;
+    color: white;
     font-weight: 600;
     border: 1px solid #3a97e8;
 
