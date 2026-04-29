@@ -1,4 +1,3 @@
-import poster from '../../images/posterVideo.png';
 import { Container, Text } from '../../components/AboutUs/AboutUs.styled';
 import { Section, VideoTitle, VideoFile } from './Vdeo.styled';
 
@@ -19,7 +18,13 @@ const Video = () => {
         </Text>
       </Container>
 
-      <VideoFile src={video} poster={poster} controls preload="metadata" playsInline></VideoFile>
+      <VideoFile
+        src={video}
+        poster="https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777461586/MNVK/about/hero_upxeyx.png"
+        controls
+        preload="metadata"
+        playsInline
+      ></VideoFile>
     </Section>
   );
 };

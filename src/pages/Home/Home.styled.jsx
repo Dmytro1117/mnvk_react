@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import hero from '../../images/hero.png';
 
 const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(30px); }
@@ -20,7 +19,8 @@ export const Hero = styled.section`
   padding-top: 110px;
 
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 70%, rgba(255, 255, 255, 1) 100%), url(${hero});
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 70%, rgba(255, 255, 255, 1) 100%),
+    url('https://res.cloudinary.com/dpvqbbgkd/image/upload/v1777461586/MNVK/about/hero_upxeyx.png');
 
   background-size: cover;
   background-position: top;
